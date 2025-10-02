@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Henry Mushiyu | Home</title>
+<title>Contact | Henry Mushiyu</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="light">
@@ -23,28 +23,20 @@
   </ul>
 </nav>
 
-<header>
-  <canvas id="particle-canvas"></canvas>
-  <div class="header-content">
-    <img src="assets/profile.jpg" alt="Profile" class="profile">
-    <h1 id="header-text"></h1>
-    <p>Cybersecurity enthusiast | Tech explorer | Life learner</p>
-    <button id="theme-toggle">🌙 Dark Mode</button>
-  </div>
-</header>
-
 <main>
-  <section>
-    <h2>Welcome!</h2>
-    <p>This is my personal website where you can explore my projects, skills, and contact me.</p>
-    <a href="projects.html" class="btn">View Portfolio</a>
-  </section>
+  <h2>Contact Me</h2>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="messageInput" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="formMessage"></p>
 </main>
 
 <footer>
   <p>© 2025 Henry Mushiyu | Made with ❤️</p>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
