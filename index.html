@@ -8,6 +8,7 @@
 </head>
 <body class="light">
 
+<!-- Navigation -->
 <nav>
   <ul class="nav-menu">
     <li><a href="index.html">Home</a></li>
@@ -23,24 +24,54 @@
   </ul>
 </nav>
 
+<!-- Header Section -->
 <header>
   <canvas id="particle-canvas"></canvas>
-  <div class="header-content">
-    <img src="assets/profile.jpg" alt="Profile" class="profile">
-    <h1 id="header-text"></h1>
-    <p>Cybersecurity enthusiast | Tech explorer | Life learner</p>
-    <button id="theme-toggle">🌙 Dark Mode</button>
+  <img src="assets/profile.jpg" alt="Henry Mushiyu" class="profile slide-left">
+  <h1 id="header-text" class="slide-right"></h1>
+  <p class="slide-left">Cybersecurity Enthusiast | Tech Explorer | Life Learner</p>
+  <div class="header-buttons slide-right">
+    <a href="projects.html" class="btn">View Projects</a>
+    <a href="contact.html" class="btn">Contact Me</a>
   </div>
+  <button id="theme-toggle" class="slide-left">🌙 Dark Mode</button>
 </header>
 
-<main>
-  <section>
-    <h2>Welcome!</h2>
-    <p>This is my personal website where you can explore my projects, skills, and contact me.</p>
-    <a href="projects.html" class="btn">View Portfolio</a>
-  </section>
-</main>
+<!-- About Section -->
+<section id="about" class="slide-left">
+  <h2>About Me</h2>
+  <p>Hello! I’m Henry, a computer science student specializing in cybersecurity. I love coding, exploring technology, and building solutions that have real-world impact. This website is my personal space to showcase projects, skills, and passions.</p>
+</section>
 
+<!-- Featured Projects Section -->
+<section id="featured-projects" class="slide-right">
+  <h2>Featured Projects</h2>
+  <div class="projects-grid">
+    <div class="project slide-left">
+      <h3>Personal Website</h3>
+      <p>Static website hosted on GitHub Pages. Mobile-friendly and Termux-compatible.</p>
+      <div class="project-links">
+        <a href="#">GitHub</a> | <a href="#">Live Demo</a>
+      </div>
+    </div>
+    <div class="project slide-right">
+      <h3>Cybersecurity Tools</h3>
+      <p>Scripts for penetration testing, network monitoring, and security learning optimized for Termux.</p>
+      <div class="project-links">
+        <a href="#">GitHub</a> | <a href="#">Live Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section id="cta" class="slide-left">
+  <h2>Want to Collaborate?</h2>
+  <p>Feel free to reach out for projects, freelance work, or just to say hi!</p>
+  <a href="contact.html" class="btn">Get in Touch</a>
+</section>
+
+<!-- Footer -->
 <footer>
   <p>© 2025 Henry Mushiyu | Made with ❤️</p>
 </footer>
@@ -48,3 +79,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
