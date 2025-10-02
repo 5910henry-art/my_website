@@ -3,90 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Henry Mushiyu</title>
+<title>Henry Mushiyu | Contact</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* ----------------- Contact Page Styles ----------------- */
+
+/* Body & section defaults */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+  --background: #fff;
+  --text: #333;
+  --accent: #4CAF50;
+  --accent-hover: #45a049;
+  --input-background: #f9f9f9;
+  --border: #ccc;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --background: #222;
+  --text: #eee;
+  --accent: #8BC34A;
+  --accent-hover: #7cb342;
+  --input-background: #333;
+  --border: #555;
+}
+
+/* Container */
+.contact-section {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  background-color: var(--background);
+}
+
+/* Heading */
+.contact-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-section p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background-color: var(--input-background);
+  color: var(--text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 6px rgba(76,175,80,0.4);
+}
+
+/* Button */
+.submit-btn {
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Form Message */
+.form-message {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px){
+  .contact-section {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+}
+</style>
 </head>
-<body class="light">
+<body>
 
-<nav>
-  <ul class="nav-menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Me</a></li>
-    <li>
-      <a href="#">Portfolio ▼</a>
-      <ul class="dropdown">
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="skills.html">Skills</a></li>
-      </ul>
-    </li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+<!-- Dark Mode Toggle -->
+<button id="theme-toggle" style="position:fixed; top:16px; right:16px; z-index:1000; padding:8px 12px; border:none; border-radius:6px; cursor:pointer;">🌙 Dark Mode</button>
 
-<main>
+<!-- Contact Section -->
+<section class="contact-section">
   <h2>Contact Me</h2>
   <p>Have a question or want to collaborate? Send me a message!</p>
 
-  <!-- Contact Form -->
-  <form id="contactForm" class="slide-left">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Your Email" required>
-    <textarea id="messageInput" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-    <p id="formMessage"></p>
+  <form id="contact-form" class="contact-form">
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send Message</button>
+    <p id="form-message" class="form-message"></p>
   </form>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials">
-    <h3>What People Say</h3>
-    <div class="testimonial slide-right">
-      <p>"Henry is an exceptional cybersecurity enthusiast and a quick learner!"</p>
-      <span>- Mentor</span>
+  <!-- Testimonials -->
+  <div style="margin-top:3rem;">
+    <h3 style="text-align:center; margin-bottom:1rem;">What People Say</h3>
+    <div style="display:flex; flex-direction:column; gap:1rem;">
+      <blockquote style="background-color: var(--input-background); padding:1rem; border-radius:6px;">
+        "Henry is an exceptional cybersecurity enthusiast and a quick learner!"<br>
+        <span>- Mentor</span>
+      </blockquote>
+      <blockquote style="background-color: var(--input-background); padding:1rem; border-radius:6px;">
+        "Very professional, creative, and reliable. Highly recommended!"<br>
+        <span>- Colleague</span>
+      </blockquote>
     </div>
-    <div class="testimonial slide-left">
-      <p>"Very professional, creative, and reliable. Highly recommended!"</p>
-      <span>- Colleague</span>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 Henry Mushiyu | Made with ❤️</p>
-</footer>
-
-<script src="script.js"></script>
+  </div>
+</section>
 
 <script>
-// ----- Form Validation -----
-const contactForm = document.getElementById("contactForm");
-const formMessage = document.getElementById("formMessage");
+// ----------------- Dark Mode Toggle -----------------
+const themeToggle = document.getElementById("theme-toggle");
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+
+// ----------------- Contact Form Validation -----------------
+const contactForm = document.getElementById("contact-form");
+const formMessage = document.getElementById("form-message");
 
 contactForm.addEventListener("submit", function(e){
-    e.preventDefault();
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("messageInput").value.trim();
+  e.preventDefault();
 
-    if(name === "" || email === "" || message === ""){
-        formMessage.textContent = "Please fill out all fields.";
-        formMessage.style.color = "red";
-        return;
-    }
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-    // Simple email validation
-    const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-    if(!emailRegex.test(email)){
-        formMessage.textContent = "Please enter a valid email address.";
-        formMessage.style.color = "red";
-        return;
-    }
+  if(!name || !email || !message){
+    formMessage.textContent = "Please fill out all fields.";
+    formMessage.style.color = "red";
+    return;
+  }
 
-    // Success message (replace with actual backend if needed)
-    formMessage.textContent = "Thank you! Your message has been sent.";
-    formMessage.style.color = "green";
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailRegex.test(email)){
+    formMessage.textContent = "Please enter a valid email address.";
+    formMessage.style.color = "red";
+    return;
+  }
 
-    // Reset form
-    contactForm.reset();
+  formMessage.textContent = "Thank you! Your message has been sent.";
+  formMessage.style.color = "green";
+
+  contactForm.reset();
 });
 </script>
 
