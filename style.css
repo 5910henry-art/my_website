@@ -1,1 +1,98 @@
-/* Add your CSS here */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body and Themes */
+body.light { background: #f5f5f5; color: #222; transition: 0.3s; }
+body.dark { background: #121212; color: #f5f5f5; transition: 0.3s; }
+
+/* Navigation */
+nav {
+    background: #333;
+    padding: 0.5rem 2rem;
+}
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.nav-menu li { position: relative; }
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background 0.3s;
+}
+.nav-menu a:hover { background: #182848; border-radius: 6px; }
+
+/* Dropdown Menu */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    list-style: none;
+    min-width: 150px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.dropdown li a { padding: 0.5rem 1rem; }
+.nav-menu li:hover .dropdown { display: block; }
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+header .profile { width: 120px; height: 120px; border-radius: 50%; margin-bottom: 1rem; }
+header #header-text { font-size: 2rem; margin-bottom: 0.5rem; }
+header button#theme-toggle {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: #182848;
+    color: #fff;
+}
+
+/* Main Section */
+main { padding: 2rem; text-align: center; }
+main h2 { margin-bottom: 1rem; font-size: 1.8rem; }
+main p { margin-bottom: 1.5rem; line-height: 1.6; }
+main .btn {
+    padding: 0.7rem 1.5rem;
+    background: #182848;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+main .btn:hover { background: #1e3c72; }
+
+/* Footer */
+footer { text-align: center; padding: 1.5rem; background: #222; color: #fff; margin-top: 2rem; }
+
+/* Slide Animations */
+.slide-left { opacity: 0; transform: translateX(-50px); transition: 0.5s ease; }
+.slide-right { opacity: 0; transform: translateX(50px); transition: 0.5s ease; }
+.slide-in { opacity: 1; transform: translateX(0); }
+
+/* Responsive */
+@media(max-width: 768px){
+    .nav-menu { flex-direction: column; }
+    .dropdown { position: static; }
+}
