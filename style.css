@@ -319,3 +319,66 @@ body.dark #cta{
 
 /* Small UX tweaks */
 a{cursor:pointer}
+/* Side Navigation */
+.side-nav{
+  height:100%;
+  width:0;
+  position:fixed;
+  z-index:2000;
+  top:0;
+  right:0; /* change to left:0 for left menu */
+  background:var(--accent-1);
+  overflow-x:hidden;
+  transition:0.3s;
+  padding-top:60px;
+  display:flex;
+  flex-direction:column;
+}
+.side-nav ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.side-nav ul li{
+  margin:12px 0;
+  position:relative;
+}
+.side-nav a{
+  padding:12px 24px;
+  text-decoration:none;
+  color:#fff;
+  font-size:1.1rem;
+  display:block;
+  transition:0.2s;
+}
+.side-nav a:hover{background:rgba(255,255,255,0.1)}
+.side-nav .sub-menu{
+  display:none;
+  margin-left:16px;
+}
+.side-nav li:hover > .sub-menu{display:block}
+
+/* Close button */
+#close-nav{
+  position:absolute;
+  top:14px;
+  right:16px;
+  font-size:28px;
+  background:none;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* Hamburger button */
+.hamburger{
+  position:fixed;
+  top:16px;
+  right:16px;
+  font-size:28px;
+  background:none;
+  border:none;
+  color:var(--accent-1);
+  z-index:2100;
+  cursor:pointer;
+}

@@ -8,31 +8,35 @@
 </head>
 <body class="light">
 
-<!-- Navigation -->
-<nav>
-  <ul class="nav-menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Me</a></li>
+<!-- Side Navigation -->
+<div id="side-nav" class="side-nav">
+  <button id="close-nav">&times;</button>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Me</a></li>
     <li>
       <a href="#">Portfolio ▼</a>
-      <ul class="dropdown">
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="skills.html">Skills</a></li>
+      <ul class="sub-menu">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
       </ul>
     </li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
-</nav>
+</div>
+
+<!-- Hamburger Button -->
+<button id="open-nav" class="hamburger">☰</button>
 
 <!-- Header Section -->
-<header>
+<header id="home">
   <canvas id="particle-canvas"></canvas>
   <img src="assets/profile.jpg" alt="Henry Mushiyu" class="profile slide-left">
-  <h1 id="header-text" class="slide-right"></h1>
+  <h1 id="header-text" class="slide-right">Hi, I’m Henry 🌍</h1>
   <p class="slide-left">Cybersecurity Enthusiast | Tech Explorer | Life Learner</p>
   <div class="header-buttons slide-right">
-    <a href="projects.html" class="btn">View Projects</a>
-    <a href="contact.html" class="btn">Contact Me</a>
+    <a href="#projects" class="btn">View Portfolio</a>
+    <a href="#contact" class="btn">Contact Me</a>
   </div>
   <button id="theme-toggle" class="slide-left">🌙 Dark Mode</button>
 </header>
@@ -43,8 +47,8 @@
   <p>Hello! I’m Henry, a computer science student specializing in cybersecurity. I love coding, exploring technology, and building solutions that have real-world impact. This website is my personal space to showcase projects, skills, and passions.</p>
 </section>
 
-<!-- Featured Projects Section -->
-<section id="featured-projects" class="slide-right">
+<!-- Projects Section -->
+<section id="projects" class="slide-right">
   <h2>Featured Projects</h2>
   <div class="projects-grid">
     <div class="project slide-left">
@@ -64,11 +68,58 @@
   </div>
 </section>
 
-<!-- Call to Action -->
-<section id="cta" class="slide-left">
-  <h2>Want to Collaborate?</h2>
-  <p>Feel free to reach out for projects, freelance work, or just to say hi!</p>
-  <a href="contact.html" class="btn">Get in Touch</a>
+<!-- Skills Section -->
+<section id="skills" class="slide-left">
+  <h2>Skills & Technologies</h2>
+  <div class="skills-grid">
+    <div class="skill slide-left">
+      <h4>HTML & CSS</h4>
+      <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+    </div>
+    <div class="skill slide-right">
+      <h4>JavaScript</h4>
+      <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
+    </div>
+    <div class="skill slide-left">
+      <h4>Python</h4>
+      <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
+    </div>
+    <div class="skill slide-right">
+      <h4>Cybersecurity</h4>
+      <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+    </div>
+    <div class="skill slide-left">
+      <h4>Git & GitHub</h4>
+      <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="slide-left">
+  <h2>Contact Me</h2>
+  <p>Have a question or want to collaborate? Send me a message!</p>
+
+  <form id="contactForm" class="slide-left">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="messageInput" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+    <p id="formMessage"></p>
+  </form>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="slide-right">
+  <h2>What People Say</h2>
+  <div class="testimonial slide-left">
+    <p>"Henry is an exceptional cybersecurity enthusiast and a quick learner!"</p>
+    <span>- Mentor</span>
+  </div>
+  <div class="testimonial slide-right">
+    <p>"Very professional, creative, and reliable. Highly recommended!"</p>
+    <span>- Colleague</span>
+  </div>
 </section>
 
 <!-- Footer -->
@@ -79,4 +130,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-

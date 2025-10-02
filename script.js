@@ -74,3 +74,56 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+// Side nav open/close
+const sideNav = document.getElementById("side-nav");
+const openBtn = document.getElementById("open-nav");
+const closeBtn = document.getElementById("close-nav");
+
+openBtn.addEventListener("click", () => sideNav.style.width = "250px");
+closeBtn.addEventListener("click", () => sideNav.style.width = "0");
+
+// Dark mode toggle
+const themeToggle = document.getElementById("theme-toggle");
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
+
+// Slide-in animations
+const slideElems = document.querySelectorAll(".slide-left, .slide-right");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("slide-in");
+        }
+    });
+}, {threshold:0.3});
+slideElems.forEach(el => observer.observe(el));
+
+// Contact form validation
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+contactForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("messageInput").value.trim();
+
+    if(name === "" || email === "" || message === ""){
+        formMessage.textContent = "Please fill out all fields.";
+        formMessage.style.color = "red";
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailRegex.test(email)){
+        formMessage.textContent = "Please enter a valid email address.";
+        formMessage.style.color = "red";
+        return;
+    }
+
+    formMessage.textContent = "Thank you! Your message has been sent.";
+    formMessage.style.color = "green";
+    contactForm.reset();
+});
+
